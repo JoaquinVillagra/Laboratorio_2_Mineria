@@ -21,6 +21,8 @@ bc_data$eg = as.numeric(bc_data$eg)
 bc_data$id = NULL
 bc_data$t = NULL
 
+library(foreach)
+
 range01 <- function(x){(x-min(x))/(max(x)-min(x))}
 
 foreach(i=2:33) %dopar% {
@@ -29,7 +31,6 @@ foreach(i=2:33) %dopar% {
 }
 
 
-library(foreach)
 #generar curva ROC
 n = 300
 n2 = 2
@@ -70,11 +71,11 @@ varImpPlot(modelo)
 # Number of trees: 610
 # No. of variables tried at each split: 5
 # 
-# OOB estimate of  error rate: 23.2%
+# OOB estimate of  error rate: 24.23%
 # Confusion matrix:
 #   N R class.error
-# N 146 2  0.01351351
-# R  43 3  0.93478261
+# N 145 3  0.02027027
+# R  44 2  0.95652174
 
 #eliminar caracteristicas según importancia
 #se ordenan según grado de importancia
