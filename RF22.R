@@ -94,7 +94,7 @@ for (i in 1:32)
   fn = modelo$confusion[2,1]
   fp = modelo$confusion[2,2]
   e = (vn+fn)/(vp+vn+fn+fp)
-  bc_error = rbind(bc_error, data.frame(n_variables = n, error = e))
+  bc_error = rbind(bc_error, data.frame(n_variables = (n-1), error = e))
   n = n - 1
 }
 
@@ -131,3 +131,7 @@ par(op)
 library("MASS")
 parcoord(bc_fn[1:50,2:10],var.label = TRUE,col=c("red", "green")[as.numeric(bc_fn$c)])
 legend("bottomright",legend = c("N", "R"),fill=2:3)
+
+
+#https://books.google.cl/books?id=ANIlBAAAQBAJ&pg=PA1&lpg=PA1&dq=Predicting+Disease+Risks+Using+Feature+Selection+Based+on+Random+Forest+and+Support+Vector+Machine&source=bl&ots=9496EbyrON&sig=NeIw_rsid5koPR0Dc654td5Tzh4&hl=es-419&sa=X&ved=0ahUKEwi3m8eV1pvWAhXCPpAKHeBTAn0Q6AEIQjAD#v=onepage&q=Predicting%20Disease%20Risks%20Using%20Feature%20Selection%20Based%20on%20Random%20Forest%20and%20Support%20Vector%20Machine&f=false
+#https://books.google.cl/books?id=jfYoDwAAQBAJ&pg=PA310&lpg=PA310&dq=wpbc+and+random+forest&source=bl&ots=8EMWPkrD-9&sig=EK5XNIourJO9Dxc6a9YGlT64sB0&hl=es-419&sa=X&ved=0ahUKEwjJr9el95vWAhXJg5AKHSRoD3AQ6AEIJzAA#v=onepage&q=wpbc%20and%20random%20forest&f=false
